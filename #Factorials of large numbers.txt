@@ -1,0 +1,16 @@
+N1 = 10
+factorial_digits1 = [1]
+
+for i in range(2, N1 + 1):
+    carry = 0
+    for j in range(len(factorial_digits1)):
+        product = factorial_digits1[j] * i + carry
+        factorial_digits1[j] = product % 10
+        carry = product // 10
+
+    while carry:
+        factorial_digits1.append(carry % 10)
+        carry //= 10
+
+result1 = int(''.join(map(str, factorial_digits1[::-1])))
+print(result1)

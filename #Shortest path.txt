@@ -1,0 +1,10 @@
+a,b,c=map(int,input().split())
+d=b^c
+n=0
+for i in range(32):
+    if((d>>i)&1):
+        n+=1
+if(n%2==0):
+    print(n//2)
+else:
+    print(-1)
