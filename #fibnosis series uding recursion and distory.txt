@@ -1,0 +1,13 @@
+def fib(n,d):
+    if n==0:
+        return 0
+    if n<3:
+        return 1
+    if n in d:
+        return d[n]
+    a=(fib(n-1,d)+fib(n-2,d))
+    d[n]=a
+    return a
+n=int(input())
+d={}
+print(fib(n,d))
